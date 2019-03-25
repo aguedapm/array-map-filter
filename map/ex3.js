@@ -60,6 +60,14 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(film => {
+    const rat = film.rating < 60? 'rotten' : film.rating < 76 ? 'fresh' : 'certified fresh'
+    return {
+      name : film.name,
+      rating : film.rating,
+      label : rat
+    }
+  })
 }
 
 
